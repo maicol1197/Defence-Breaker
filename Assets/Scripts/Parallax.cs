@@ -18,6 +18,7 @@ public class Parallax : MonoBehaviour
 	public int cantObjetos;
 	public float velocidad;
 	public float ratioDeSpawn;
+	public float xSpawnInicial;
 
 	public float minY;
 	public float maxY;
@@ -75,7 +76,7 @@ public class Parallax : MonoBehaviour
 		if (t == null) return;
 		Vector3 pos = Vector3.zero;
 		pos.y = Random.Range(minY, maxY);
-		pos.x = -3.72f;
+		pos.x = xSpawnInicial;
 		t.position = pos;
 		Spawn();
 	}
