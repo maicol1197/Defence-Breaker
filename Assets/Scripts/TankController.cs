@@ -1,13 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class TankController : MonoBehaviour
 {
     public GameObject ExplosionDisparoPrefab;
     public GameObject menuPrincipal;
     public GameObject menuOpciones;
-    public Canvas canvas;
+
+    public Slider Salud;
+    public TextMeshProUGUI municionT;
+    public TextMeshProUGUI dineroT;
+
+
+
+    public int vida;
+    public float defensa;
+    public float ataque;
+    public int municion;
+    public int dinero;
     
     void Start()
     {
@@ -15,8 +28,8 @@ public class TankController : MonoBehaviour
     }
     void Update()
     {
-        if (!menuPrincipal.activeSelf && !menuOpciones.activeSelf) { 
-            if(Input.GetButtonDown("Fire1"))
+        if (!menuPrincipal.activeSelf && !menuOpciones.activeSelf) {
+            if (Input.GetButtonDown("Fire1"))
             {
                 Vector3 mousePos = Input.mousePosition;
                 Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -24,9 +37,18 @@ public class TankController : MonoBehaviour
                 {
                     GameObject boom = Instantiate(ExplosionDisparoPrefab, worldPosition, Quaternion.identity) as GameObject;
                     Destroy(boom, 0.9f);
-                    
                 }
             }
         }
+
+        Salud.value = vida;
+        dineroT.text = dinero.ToString();
+        municionT.text = municion.ToString();
+
     }
+
+
+    
+
+
 }
