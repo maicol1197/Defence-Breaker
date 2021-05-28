@@ -46,8 +46,6 @@ public class Parallax : MonoBehaviour
 
 	void Configure()
 	{
-		
-	
 		objetos = new Objetos[cantObjetos];
 		for (int i = 0; i < objetos.Length; i++)
 		{

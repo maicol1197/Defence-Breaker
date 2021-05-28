@@ -12,6 +12,11 @@ public class OpcionesManager : MonoBehaviour
     public TMP_Dropdown resolucionesLista;
     List<ResolucionesDisponibles> ressDisp = new List<ResolucionesDisponibles>();
 
+    private void Awake()
+    {
+        Time.timeScale = 1f;
+        PauseMenu.isPaused = false;
+    }
     void Start()
     {
         if (Screen.fullScreen)
@@ -22,7 +27,6 @@ public class OpcionesManager : MonoBehaviour
         {
             toggle.isOn = false;
         }
-
         RevisarResolucion();
     }
 

@@ -4,11 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: "Assets/Scenes/Men\xFA Principal.unity"
-    guid: 870608614ae3e6b4f9277fb13b939bc7
+  m_Scenes: []
   m_configObjects: {}
