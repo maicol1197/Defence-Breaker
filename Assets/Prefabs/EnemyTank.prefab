@@ -394,6 +394,7 @@ GameObject:
   - component: {fileID: 8461233180556800463}
   - component: {fileID: 8461233180556800457}
   - component: {fileID: 8461233180556800456}
+  - component: {fileID: -3805268999664178735}
   m_Layer: 0
   m_Name: EnemyTank
   m_TagString: EnemyT
@@ -510,11 +511,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidaMaxima: 100
-  ataque: 15
+  ataque: 16
   defensa: 12
   muerteEnemigo: {fileID: 8300000, guid: 23a8b48e6a9fe8d4789269e144af4ed7, type: 3}
   "da\xF1oAEnemigo": {fileID: 8300000, guid: a54889056633aa04aad1ea3b92fc3627, type: 3}
   movimientoAvion: {fileID: 0}
+  vidaActual: 0
 --- !u!114 &8461233180556800497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,3 +659,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-3805268999664178735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8461233180556800496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9ef9521fb4e7964296d38406581b8b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

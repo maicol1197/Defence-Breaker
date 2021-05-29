@@ -19,7 +19,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.left * velocidad * Time.deltaTime;
+        transform.position += Vector3.left * (velocidad + 0.1f*EnemyManager.nroOleada) * Time.deltaTime;
         if(this.gameObject.transform.position.x <= -12)
         {
             Destroy(this.gameObject);

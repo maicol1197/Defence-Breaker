@@ -37,6 +37,8 @@ public class TankController : MonoBehaviour
         anim = GetComponent<Animator>();
         sonidoPlayer = GetComponent<AudioSource>();
         vidaActual = vidaMaxima;
+        salud.maxValue = vidaMaxima;
+        salud.minValue = 0;
     }
     void Start()
     {
@@ -71,7 +73,6 @@ public class TankController : MonoBehaviour
         if(municion > 0) { 
             if (Input.GetButtonDown("Fire1"))
             {
-                /*Vector3 mousePos = Input.mousePosition;*/
                 Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 worldPosition = new Vector3(worldPosition.x, worldPosition.y, 0);
                 {
@@ -90,18 +91,18 @@ public class TankController : MonoBehaviour
     public void RecibirDaño(int cantDaño)
     {
         dañado = true;
-        int dañoTotal = cantDaño - defensa;
+        int dañoTotal = cantDaño - this.defensa;
         if (dañoTotal > 0)
         {
-            vidaActual -= dañoTotal;
+            this.vidaActual -= dañoTotal;
         }
         else
         {
-            vidaActual -= 0;
+            this.vidaActual -= 0;
         }
-        salud.value = vidaActual;
+        salud.value = this.vidaActual;
         sonidoPlayer.Play();
-        if(vidaActual <= 0 && !estaMuerto)
+        if(this.vidaActual <= 0 && !estaMuerto)
         {
             Muerte();
         }
@@ -118,9 +119,7 @@ public class TankController : MonoBehaviour
         sonidoPlayer.clip = muertePersonaje;
         sonidoPlayer.Play();
         Destroy(this.gameObject, 0.5f);
-        EnemyManager.cantEnemigosPorRonda = 2;
-        EnemyManager.nroOleada = 1;
-        EnemyManager.cantEnemigosDestruidos = 0;
+        GameReset();
     }
     
     void OnTriggerEnter(Collider objeto)
@@ -152,7 +151,16 @@ public class TankController : MonoBehaviour
         torreta.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
        
     }
-    
+
+    public void GameReset()
+    {
+        EnemyManager.cantEnemigosPorRonda = 2;
+        EnemyManager.nroOleada = 1;
+        EnemyManager.cantEnemigosDestruidos = 0;
+        dinero = 0;
+        municion = 25;
+    }
+
 
 
 }

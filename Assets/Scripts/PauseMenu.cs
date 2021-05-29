@@ -14,6 +14,9 @@ public class PauseMenu : MonoBehaviour
     public GameObject gameOverMenu;
     public GameObject panelOleadas;
     public TextMeshProUGUI indicadorOleada;
+    public TextMeshProUGUI mostrarPuntos;
+    public TextMeshProUGUI mostrarHighScore;
+    public static int puntosActuales = 0;
     public Button botonPausa;
     Color color;
 
@@ -29,7 +32,14 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        indicadorOleada.text = "Wave: 0" + EnemyManager.nroOleada;
+        if (EnemyManager.nroOleada - 10 < 0)
+        {
+            indicadorOleada.text = "Wave: 0" + EnemyManager.nroOleada;
+        }
+        else
+        {
+            indicadorOleada.text = "Wave: " + EnemyManager.nroOleada;
+        }
         if (!EnemyManager.isRoundInProgress)
         {
             color = new Color(255, 255, 255, 255);
@@ -80,6 +90,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         opciones.SetActive(true);
+        Time.timeScale = 0f;
         isPaused = true;
         isOptionsOpen = true;
     }
@@ -88,6 +99,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu.SetActive(true);
         opciones.SetActive(false);
+        Time.timeScale = 0f;
         isPaused = true;
         isOptionsOpen = false;
     }
@@ -95,6 +107,7 @@ public class PauseMenu : MonoBehaviour
     public void PressedButonQuit()
     {
         JuegoResumido();
+        player.GameReset();
         SceneManager.LoadScene("Menú Principal");
     }
 
@@ -102,15 +115,23 @@ public class PauseMenu : MonoBehaviour
     {
         if (muerto)
         {
+            gameOverMenu.SetActive(true);
+            mostrarPuntos.text = puntosActuales.ToString();
+            if (puntosActuales > PlayerPrefs.GetInt("HScoreNro", 0))
+            {
+                PlayerPrefs.SetInt("HScoreNro", puntosActuales);
+            }
+            mostrarHighScore.text = PlayerPrefs.GetInt("HScoreNro", 0).ToString();
             Time.timeScale = 0f;
             isPaused = true;
-            gameOverMenu.SetActive(true);
         }
     }
 
     public void Reiniciar()
     {
         JuegoResumido();
+        player.GameReset();
+        puntosActuales = 0;
         SceneManager.LoadScene("Juego");
     }
 

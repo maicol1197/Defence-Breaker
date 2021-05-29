@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 753842949891298444}
   - component: {fileID: 753842949891298549}
   - component: {fileID: 753842949891298546}
+  - component: {fileID: -8454631401060245164}
   m_Layer: 0
   m_Name: Avion
   m_TagString: EnemyA
@@ -366,6 +367,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-8454631401060245164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753842949891298442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9ef9521fb4e7964296d38406581b8b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &753842949942837536
 GameObject:
   m_ObjectHideFlags: 0

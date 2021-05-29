@@ -16,7 +16,7 @@ public class EnemyStats : MonoBehaviour
     bool recibioDaño = false;
 
     TankController player;
-    int vidaActual;
+    public int vidaActual;
     Animator anim;
     AudioSource sonidoEnemigo;
     bool estaMuerto = false;
@@ -29,7 +29,7 @@ public class EnemyStats : MonoBehaviour
         anim = this.gameObject.GetComponent<Animator>();
         sonidoEnemigo = this.gameObject.GetComponent<AudioSource>();
         player = FindObjectOfType<TankController>();
-        saludEnemgios = this.gameObject.GetComponentInChildren<Slider>();
+       
     }
     void Start()
     {
@@ -47,7 +47,6 @@ public class EnemyStats : MonoBehaviour
             this.gameObject.GetComponent<SpriteRenderer>().color = Color.Lerp(this.gameObject.GetComponent<SpriteRenderer>().color, colorNormal, 5f * Time.deltaTime);
         }
         recibioDaño = false;
-        saludEnemgios.value = vidaActual;
     }
 
     void RecibirDaño(int dañoRecibido)
@@ -81,6 +80,7 @@ public class EnemyStats : MonoBehaviour
             || this.gameObject.tag == "EnemyO" ) {
             EnemyManager.cantEnemigosDestruidos++;
             TankController.dinero++;
+            PauseMenu.puntosActuales++;
         }
         Destroy(this.gameObject,0.3f);
         
