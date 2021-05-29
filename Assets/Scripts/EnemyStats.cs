@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyStats : MonoBehaviour
 {
     public int vidaMaxima;
-    public int vidaActual;
     public int ataque;
     public int defensa;
     public AudioClip muerteEnemigo;
@@ -16,9 +16,11 @@ public class EnemyStats : MonoBehaviour
     bool recibioDaño = false;
 
     TankController player;
+    int vidaActual;
     Animator anim;
     AudioSource sonidoEnemigo;
     bool estaMuerto = false;
+    Slider saludEnemgios;
 
     private void Awake()
     {
@@ -27,10 +29,10 @@ public class EnemyStats : MonoBehaviour
         anim = this.gameObject.GetComponent<Animator>();
         sonidoEnemigo = this.gameObject.GetComponent<AudioSource>();
         player = FindObjectOfType<TankController>();
+        saludEnemgios = this.gameObject.GetComponentInChildren<Slider>();
     }
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -45,7 +47,7 @@ public class EnemyStats : MonoBehaviour
             this.gameObject.GetComponent<SpriteRenderer>().color = Color.Lerp(this.gameObject.GetComponent<SpriteRenderer>().color, colorNormal, 5f * Time.deltaTime);
         }
         recibioDaño = false;
-       
+        saludEnemgios.value = vidaActual;
     }
 
     void RecibirDaño(int dañoRecibido)
