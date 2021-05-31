@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PlayerX
+  - AtaqueT
+  - AtaqueA
+  - EnemyA
+  - EnemyT
+  - EnemyO
+  - Enemy
+  - TriggerA
+  - PlayerAtaque
+  - EnemyBoss
+  - EnemyBossP
   layers:
   - Default
   - TransparentFX

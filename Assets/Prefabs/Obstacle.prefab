@@ -32,7 +32,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220388108355542074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.67, y: -1.9299998, z: 0}
+  m_LocalPosition: {x: 14.67, y: -2.5, z: 0}
   m_LocalScale: {x: 1.0516375, y: 1.0516375, z: 1.0516375}
   m_Children:
   - {fileID: 8908737186769689231}
@@ -138,6 +138,7 @@ MonoBehaviour:
   muerteEnemigo: {fileID: 8300000, guid: 23a8b48e6a9fe8d4789269e144af4ed7, type: 3}
   "da\xF1oAEnemigo": {fileID: 8300000, guid: a54889056633aa04aad1ea3b92fc3627, type: 3}
   movimientoAvion: {fileID: 0}
+  vidaActual: 0
 --- !u!114 &1220388108355542052
 MonoBehaviour:
   m_ObjectHideFlags: 0

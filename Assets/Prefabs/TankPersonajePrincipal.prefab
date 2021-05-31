@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: c7e8ff17ed6913b4e91e6ba3752d8b5e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -121,7 +121,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 48
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!136 &4491375467937780022
 CapsuleCollider:
@@ -149,18 +149,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af457406d458f694097b381dad89d5fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExplosionDisparoPrefab: {fileID: 4529432050465131720, guid: cf8efe57245e2164eb6b2fdf491adc63, type: 3}
+  ExplosionDisparoPrefab: {fileID: 4529432050465131720, guid: cf8efe57245e2164eb6b2fdf491adc63,
+    type: 3}
   salud: {fileID: 0}
   muertePersonaje: {fileID: 8300000, guid: 0feedf32a30bd0f4697bfd20ec85b682, type: 3}
   municionT: {fileID: 0}
   dineroT: {fileID: 0}
   "indicadorDa\xF1o": {fileID: 0}
-  vidaMaxima: 100
+  vidaMaxima: 20
   vidaActual: 100
-  defensa: 1
-  ataque: 20
+  defensa: 12
+  ataque: 40
   municion: 99
-  dinero: 69
   estaMuerto: 0
   "colorDa\xF1o": {r: 1, g: 0, b: 0, a: 0.1}
 --- !u!82 &4491375467937783496
@@ -329,7 +329,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 12
   m_Sprite: {fileID: 21300000, guid: c49c748f660e95a42ac2f3b98989805b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

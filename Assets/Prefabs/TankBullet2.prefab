@@ -100,12 +100,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidaMaxima: 10
-  vidaActual: 10
   ataque: 20
   defensa: 2
   muerteEnemigo: {fileID: 8300000, guid: 23a8b48e6a9fe8d4789269e144af4ed7, type: 3}
-  "da\xF1oAEnemigo": {fileID: 8300000, guid: 0eeb646c12ac2a84e8272b733f4366ed, type: 3}
+  "da\xF1oAEnemigo": {fileID: 8300000, guid: a54889056633aa04aad1ea3b92fc3627, type: 3}
   movimientoAvion: {fileID: 0}
+  vidaActual: 10
 --- !u!114 &4607485236121031213
 MonoBehaviour:
   m_ObjectHideFlags: 0

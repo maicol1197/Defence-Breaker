@@ -28,7 +28,7 @@ public class DisparoEnemyTank : MonoBehaviour
 
     IEnumerator Disparo()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         
         GameObject bala = Instantiate(prefabDisparo) as GameObject;
         bala.transform.position = new Vector3(this.gameObject.transform.position.x - 1.20f, this.gameObject.transform.position.y + 0.25f, 0);

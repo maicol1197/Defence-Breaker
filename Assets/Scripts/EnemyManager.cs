@@ -24,7 +24,7 @@ public class EnemyManager : MonoBehaviour
     public float SpanwPosX;
 
 
-    public static int nroOleada = 1;
+    public static int nroOleada = 4;
     public static int cantEnemigosPorRonda;
     public static bool isRoundInProgress = false;
     public static int cantEnemigosDestruidos = 0;
@@ -40,11 +40,15 @@ public class EnemyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isRoundInProgress)
+        if(nroOleada%5 != 0)
         {
-            RoundStart();
+            if (!isRoundInProgress && !BossController.isBossAlive)
+            {
+                RoundStart();
+            }
+            CheckearEnemigos();
         }
-        CheckearEnemigos();
+        
     }
 
     private void OnTriggerEnter(Collider other)

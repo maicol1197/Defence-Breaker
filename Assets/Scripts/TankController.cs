@@ -141,7 +141,7 @@ public class TankController : MonoBehaviour
         Transform torreta = this.gameObject.transform.Find("Cannon1");
         
         Vector3 mousePos = Input.mousePosition;
-        mousePos.z = 5.23f;
+        mousePos.z = 5f;
 
         Vector3 objectPos = Camera.main.WorldToScreenPoint(torreta.position);
         mousePos.x = mousePos.x - objectPos.x;
