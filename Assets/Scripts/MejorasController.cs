@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class MejorasController : MonoBehaviour
 {
@@ -10,11 +11,16 @@ public class MejorasController : MonoBehaviour
     public TextMeshProUGUI vidaMaximaTxt;
     public TextMeshProUGUI municionTxt;
     GameObject menu;
+    public Sprite menuDesplegar;
+    public Sprite menuDesplegado;
+    public GameObject boton;
+    GameObject botonAbrir;
 
 
     void Start()
     {
         menu = GameObject.Find("MenuDeMejoras");
+        botonAbrir = GameObject.Find("MenuDeMejorasB");
         menu.SetActive(false);
     }
 
@@ -68,10 +74,12 @@ public class MejorasController : MonoBehaviour
         if (menu.activeInHierarchy)
         {
             menu.SetActive(false);
+            boton.GetComponent<Image>().sprite = menuDesplegado;
         }
         else
         {
             menu.SetActive(true);
+            boton.GetComponent<Image>().sprite = menuDesplegar;
         }
     }
 }

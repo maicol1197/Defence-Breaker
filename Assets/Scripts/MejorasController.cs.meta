@@ -3,7 +3,14 @@ guid: 7cb0b08c6918c834184a758ac03b4c55
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ataqueTxt: {instanceID: 0}
+  - defensaTxt: {instanceID: 0}
+  - vidaMaximaTxt: {instanceID: 0}
+  - municionTxt: {instanceID: 0}
+  - menuDesplegar: {instanceID: 0}
+  - menuDesplegado: {fileID: 21300000, guid: d7e9f4a7e3824584dbd9965eaab6a7b3, type: 3}
+  - boton: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -49,6 +49,7 @@ public class TankController : MonoBehaviour
     void Update()
     {
         salud.maxValue = vidaMaxima;
+        salud.value = vidaActual;
         if (dañado && !estaMuerto)
         {
             indicadorDaño.color = colorDaño;
@@ -104,7 +105,6 @@ public class TankController : MonoBehaviour
         {
             vidaActual -= 0;
         }
-        salud.value = vidaActual;
         sonidoPlayer.Play();
         if(vidaActual <= 0 && !estaMuerto)
         {
