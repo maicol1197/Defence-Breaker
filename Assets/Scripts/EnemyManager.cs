@@ -116,6 +116,7 @@ public class EnemyManager : MonoBehaviour
     {
         isRoundInProgress = false;
         nroOleada++;
+        TankController.dinero += 5;
     }
 
     void CheckearEnemigos()

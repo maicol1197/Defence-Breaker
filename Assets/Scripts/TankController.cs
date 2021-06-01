@@ -18,13 +18,13 @@ public class TankController : MonoBehaviour
     public Image indicadorDaño;
 
 
-    public int vidaMaxima;
-    public int vidaActual;
+    public static int vidaMaxima = 100;
+    public static int vidaActual;
     
     
-    public int defensa;
-    public int ataque;
-    public int municion;
+    public static int defensa = 10;
+    public static int ataque = 50;
+    public static int municion = 30;
     public static int dinero = 0;
     public bool estaMuerto;
     bool dañado;
@@ -40,7 +40,6 @@ public class TankController : MonoBehaviour
         anim = GetComponent<Animator>();
         sonidoPlayer = GetComponent<AudioSource>();
         vidaActual = vidaMaxima;
-        salud.maxValue = vidaMaxima;
         salud.minValue = 0;
     }
     void Start()
@@ -48,8 +47,8 @@ public class TankController : MonoBehaviour
         dinero = 0;
     }
     void Update()
-    { 
-       
+    {
+        salud.maxValue = vidaMaxima;
         if (dañado && !estaMuerto)
         {
             indicadorDaño.color = colorDaño;
@@ -96,18 +95,18 @@ public class TankController : MonoBehaviour
     public void RecibirDaño(int cantDaño)
     {
         dañado = true;
-        int dañoTotal = cantDaño - this.defensa;
+        int dañoTotal = cantDaño - defensa;
         if (dañoTotal > 0)
         {
-            this.vidaActual -= dañoTotal;
+            vidaActual -= dañoTotal;
         }
         else
         {
-            this.vidaActual -= 0;
+            vidaActual -= 0;
         }
-        salud.value = this.vidaActual;
+        salud.value = vidaActual;
         sonidoPlayer.Play();
-        if(this.vidaActual <= 0 && !estaMuerto)
+        if(vidaActual <= 0 && !estaMuerto)
         {
             Muerte();
         }

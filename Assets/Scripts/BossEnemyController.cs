@@ -67,7 +67,7 @@ public class BossEnemyController : MonoBehaviour
     {
         if(other.gameObject.tag == "PlayerAtaque")
         {
-            RecibirDaño(player.ataque);
+            RecibirDaño(TankController.ataque);
             sonidos.PlayOneShot(dañoAEnemigo);
         }
         if (other.gameObject.tag == "AtaqueT" && BossMovement.velocidad > 0)

@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidaMaxima: 10
-  ataque: 20
+  ataque: 30
   defensa: 2
   muerteEnemigo: {fileID: 8300000, guid: 23a8b48e6a9fe8d4789269e144af4ed7, type: 3}
   "da\xF1oAEnemigo": {fileID: 8300000, guid: a54889056633aa04aad1ea3b92fc3627, type: 3}

@@ -40,11 +40,11 @@ public class PauseMenu : MonoBehaviour
         {
             indicadorOleada.text = "Wave: " + EnemyManager.nroOleada;
         }
-        if (!EnemyManager.isRoundInProgress)
+        if (!EnemyManager.isRoundInProgress && !BossController.isBossAlive)
         {
             color = new Color(255, 255, 255, 255);
         }
-        color = Color.Lerp(color, Color.clear, 0.7f * Time.deltaTime);
+        color = Color.Lerp(color, Color.clear, 0.85f * Time.deltaTime);
         indicadorOleada.color = color;
 
         if (Input.GetKeyDown(KeyCode.Escape))

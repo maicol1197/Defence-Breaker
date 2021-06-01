@@ -86,7 +86,7 @@ public class EnemyStats : MonoBehaviour
         }
         Destroy(this.gameObject,0.3f);
         
-        if(Random.Range(0,100)+1 <= 100 && this.gameObject.tag != "Enemy" && this.gameObject.tag != "AtaqueA")
+        if(Random.Range(0,100)+1 <= 25 && this.gameObject.tag != "Enemy" && this.gameObject.tag != "AtaqueA")
         {
             GameObject ammo = Instantiate(enemyManager.ammoBox, this.transform.position, Quaternion.identity);
         }
@@ -96,7 +96,7 @@ public class EnemyStats : MonoBehaviour
     {
         if (objeto.gameObject.tag == "PlayerAtaque" && this.gameObject.tag != "TriggerA")
         {
-            int ataquePlayer = player.ataque;
+            int ataquePlayer = TankController.ataque;
             RecibirDaño(ataquePlayer);
  
         }
