@@ -234,8 +234,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 40.4684, y: 0}
+  m_SizeDelta: {x: -80.0719, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &21817667
 MonoBehaviour:
@@ -323,7 +323,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 67.486496, y: 0, z: 0, w: 0}
+  m_margin: {x: 1.0572815, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2642,6 +2642,7 @@ MonoBehaviour:
   prefabBomba: {fileID: 4320230334186330568, guid: 796c629bab1cbed45849f75cfdd29269,
     type: 3}
   ammoBox: {fileID: 7357247486771285664, guid: 47a83a441ab151f468c21169d32c3ef3, type: 3}
+  toolKit: {fileID: 5934990154051568085, guid: 33f076925825942499bb3aa23712aa91, type: 3}
   SpawnPosX: 0
 --- !u!4 &467878991
 Transform:
@@ -2700,8 +2701,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.3909011, y: 17.159718, z: 1}
-  m_Center: {x: -0.0520041, y: 11.723671, z: 0}
+  m_Size: {x: 1.3909011, y: 12.627317, z: 1}
+  m_Center: {x: -0.0520041, y: 11.624375, z: 0}
 --- !u!114 &467878995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3085,8 +3086,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 40.252197, y: 0}
+  m_SizeDelta: {x: -80.5044, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &559962827
 MonoBehaviour:
@@ -3174,7 +3175,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 67.486496, y: 0, z: 0, w: 0}
+  m_margin: {x: -0.8965149, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -6002,8 +6003,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2502601, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -33.5, y: 0}
-  m_SizeDelta: {x: 67, y: 0}
+  m_AnchoredPosition: {x: -5.976288, y: 0}
+  m_SizeDelta: {x: 12.8178, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1310654596
 MonoBehaviour:
@@ -6091,7 +6092,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 67.486496, y: 0, z: 0, w: 0}
+  m_margin: {x: 1.3210907, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -7445,8 +7446,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.22631, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.72998047, y: 0}
-  m_SizeDelta: {x: -1.4599991, y: 0}
+  m_AnchoredPosition: {x: 0.21626282, y: 0}
+  m_SizeDelta: {x: 0.43243, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1652552679
 MonoBehaviour:
@@ -7468,7 +7469,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '+5 Ammo
+  m_text: '+10 Ammo
 
     -5 Coins'
   m_isRightToLeft: 0

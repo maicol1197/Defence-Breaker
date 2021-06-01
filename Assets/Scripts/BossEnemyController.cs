@@ -102,7 +102,7 @@ public class BossEnemyController : MonoBehaviour
     {
         isDead = true;
         sonidos.PlayOneShot(muerteEnemigo);
-        Destroy(this.gameObject, 0.5f);
+        Destroy(this.gameObject, 0.8f);
         TankController.dinero += 5;
     }
 

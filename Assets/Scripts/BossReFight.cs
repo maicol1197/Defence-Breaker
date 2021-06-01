@@ -23,7 +23,7 @@ public class BossReFight : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "PlayerX")
         {
             BossMovement.velocidad = -10f;
         }

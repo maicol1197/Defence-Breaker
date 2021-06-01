@@ -14,13 +14,10 @@ public class MejorasController : MonoBehaviour
     public Sprite menuDesplegar;
     public Sprite menuDesplegado;
     public GameObject boton;
-    GameObject botonAbrir;
-
 
     void Start()
     {
         menu = GameObject.Find("MenuDeMejoras");
-        botonAbrir = GameObject.Find("MenuDeMejorasB");
         menu.SetActive(false);
     }
 
@@ -55,7 +52,14 @@ public class MejorasController : MonoBehaviour
         if (TankController.dinero >= 10)
         {
             TankController.vidaMaxima += 25;
-            TankController.vidaActual += 25;
+            if (TankController.vidaActual + 25 > TankController.vidaMaxima)
+            {
+                TankController.vidaActual = TankController.vidaMaxima;
+            }
+            else
+            {
+                TankController.vidaActual += 25;
+            }
             TankController.dinero -= 10;
         }
         
@@ -64,7 +68,7 @@ public class MejorasController : MonoBehaviour
     {
         if (TankController.dinero >= 5)
         {
-            TankController.municion += 5;
+            TankController.municion += 10;
             TankController.dinero -= 5;
         }
     }

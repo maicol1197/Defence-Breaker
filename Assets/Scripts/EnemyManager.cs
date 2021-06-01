@@ -9,7 +9,7 @@ public class EnemyManager : MonoBehaviour
         public bool enUso;
         public GameObject enemy;
         public Transform t;
-        public Enemigos(GameObject enemy) { 
+        public Enemigos(GameObject enemy) {
             this.enemy = enemy;
             t = enemy.transform;
         }
@@ -22,6 +22,7 @@ public class EnemyManager : MonoBehaviour
     public GameObject prefabEnemyObstacle;
     public GameObject prefabBomba;
     public GameObject ammoBox;
+    public GameObject toolKit;
 
     public float SpawnPosX;
 

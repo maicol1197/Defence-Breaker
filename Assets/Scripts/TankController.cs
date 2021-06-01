@@ -144,6 +144,19 @@ public class TankController : MonoBehaviour
             Destroy(objeto.gameObject);
             municion += 5;
         }
+        if (objeto.gameObject.tag == "Heal")
+        {
+            Destroy(objeto.gameObject);
+            if(vidaActual + 15 > vidaMaxima)
+            {
+                vidaActual = vidaMaxima;
+            }
+            else
+            {
+                vidaActual += 15;
+            }
+            
+        }
     }
    
 

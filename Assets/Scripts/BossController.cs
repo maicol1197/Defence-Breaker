@@ -56,7 +56,14 @@ public class BossController : MonoBehaviour
                 Debug.Log("Lista: " + partesDelJefe.Length);
                 foreach (GameObject go in partesDelJefe)
                 {
-                    saludJefeMaxima += go.gameObject.GetComponent<BossEnemyController>().vidaMaxima;
+                    if (go.gameObject.GetComponent<BossEnemyController>())
+                    {
+                        saludJefeMaxima += go.gameObject.GetComponent<BossEnemyController>().vidaMaxima;
+                    }
+                    else
+                    {
+                        saludJefeMaxima += go.gameObject.GetComponent<LocomotoraController>().vidaMaxima;
+                    }
                 }
                 saludJefeActual = saludJefeMaxima;
                 saludJefe.maxValue = saludJefeMaxima;
@@ -92,11 +99,11 @@ public class BossController : MonoBehaviour
     void Muerte()
     {
         isBossAlive = false;
-        Destroy(Locomotora);
-        Destroy(VagonGris);
-        Destroy(VagonAzul);
-        Destroy(VagonVerde);
-        Destroy(VagonRojo);
+        Destroy(Locomotora,0.8f);
+        Destroy(VagonGris, 0.8f);
+        Destroy(VagonAzul, 0.8f);
+        Destroy(VagonVerde, 0.8f);
+        Destroy(VagonRojo, 0.8f);
         vias.GetComponent<Parallax>().despawnPos = 20;
         vias.SetActive(false);
         saludJefe.gameObject.SetActive(false);

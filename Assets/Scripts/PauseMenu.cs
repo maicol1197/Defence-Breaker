@@ -19,15 +19,20 @@ public class PauseMenu : MonoBehaviour
     public static int puntosActuales = 0;
     public Button botonPausa;
     Color color;
-
+    GameObject botonMejoras;
+    GameObject panelMejoras;
 
     TankController player;
 
     private void Awake()
     {
+
+        panelMejoras = GameObject.Find("MenuDeMejoras");
+        botonMejoras = GameObject.Find("DesplegarMejoras");
         color = indicadorOleada.color;
         player = FindObjectOfType<TankController>();
         JuegoResumido();
+
     }
     // Update is called once per frame
     void Update()
@@ -52,7 +57,6 @@ public class PauseMenu : MonoBehaviour
             JuegoPausado();
         }
         GameOverScreen(player.estaMuerto);
-        
     }
 
     public void JuegoPausado()
@@ -115,6 +119,8 @@ public class PauseMenu : MonoBehaviour
     {
         if (muerto)
         {
+            botonMejoras.SetActive(false);
+            panelMejoras.SetActive(false);
             gameOverMenu.SetActive(true);
             mostrarPuntos.text = puntosActuales.ToString();
             if (puntosActuales > PlayerPrefs.GetInt("HScoreNro", 0))

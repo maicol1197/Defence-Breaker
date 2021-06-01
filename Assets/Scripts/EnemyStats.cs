@@ -20,7 +20,6 @@ public class EnemyStats : MonoBehaviour
     Animator anim;
     AudioSource sonidoEnemigo;
     bool estaMuerto = false;
-    Slider saludEnemgios;
     EnemyManager enemyManager;
 
     private void Awake()
@@ -85,11 +84,15 @@ public class EnemyStats : MonoBehaviour
             PauseMenu.puntosActuales++;
         }
         Destroy(this.gameObject,0.3f);
-        
-        if(Random.Range(0,100)+1 <= 25 && this.gameObject.tag != "Enemy" && this.gameObject.tag != "AtaqueA")
+        int randomNumber = Random.Range(0, 100) + 1;
+        if (randomNumber <= 25 && this.gameObject.tag != "Enemy" && this.gameObject.tag != "AtaqueA")
         {
             GameObject ammo = Instantiate(enemyManager.ammoBox, this.transform.position, Quaternion.identity);
+        }else if(randomNumber >= 70 && randomNumber <= 100 && this.gameObject.tag != "Enemy" && this.gameObject.tag != "AtaqueA")
+        {
+            GameObject tools = Instantiate(enemyManager.toolKit, this.transform.position, Quaternion.identity);
         }
+
     }
 
     void OnTriggerEnter(Collider objeto)
