@@ -21,10 +21,12 @@ public class EnemyManager : MonoBehaviour
     public GameObject prefabEnemyTank;
     public GameObject prefabEnemyObstacle;
     public GameObject prefabBomba;
-    public float SpanwPosX;
+    public GameObject ammoBox;
+
+    public float SpawnPosX;
 
 
-    public static int nroOleada = 4;
+    public static int nroOleada = 1;
     public static int cantEnemigosPorRonda;
     public static bool isRoundInProgress = false;
     public static int cantEnemigosDestruidos = 0;
@@ -56,7 +58,7 @@ public class EnemyManager : MonoBehaviour
         if (other.gameObject.tag == "TriggerA" && other.GetType() == typeof(BoxCollider))
         {
             GameObject bomba = Instantiate(prefabBomba) as GameObject;
-            bomba.transform.position = new Vector3(-6f, bomba.transform.position.y, bomba.transform.position.z);
+            bomba.transform.position = new Vector3(-4.8f, bomba.transform.position.y, bomba.transform.position.z);
         }
         if (other.gameObject.tag == "EnemyO" || other.gameObject.tag == "EnemyT" || other.gameObject.tag == "Enemy")
         {
@@ -79,27 +81,27 @@ public class EnemyManager : MonoBehaviour
         {   
             if(i != 0)
             {
-                SpanwPosX = (enemigos[i-1].t.position.x) + Random.Range(4f, 5f);
+                SpawnPosX = (enemigos[i-1].t.position.x) + Random.Range(4f, 5f);
             }
             else
             {
-                SpanwPosX = 15f;
+                SpawnPosX = 15f;
             }
             switch (Random.Range(0, 3))
             {
                 case 0:
                     GameObject enemyAvion = Instantiate(prefabEnemyAvion) as GameObject;
-                    enemyAvion.transform.position = new Vector3(SpanwPosX, enemyAvion.transform.position.y, enemyAvion.transform.position.z);
+                    enemyAvion.transform.position = new Vector3(SpawnPosX, enemyAvion.transform.position.y, enemyAvion.transform.position.z);
                     enemigos[i] = new Enemigos(enemyAvion);
                     break;
                 case 1:
                     GameObject enemyTank = Instantiate(prefabEnemyTank) as GameObject;
-                    enemyTank.transform.position = new Vector3(SpanwPosX, enemyTank.transform.position.y, enemyTank.transform.position.z);
+                    enemyTank.transform.position = new Vector3(SpawnPosX, enemyTank.transform.position.y, enemyTank.transform.position.z);
                     enemigos[i] = new Enemigos(enemyTank);
                     break;
                 case 2:
                     GameObject enemyObstacle = Instantiate(prefabEnemyObstacle) as GameObject;
-                    enemyObstacle.transform.position = new Vector3(SpanwPosX, enemyObstacle.transform.position.y, enemyObstacle.transform.position.z);
+                    enemyObstacle.transform.position = new Vector3(SpawnPosX, enemyObstacle.transform.position.y, enemyObstacle.transform.position.z);
                     enemigos[i] = new Enemigos(enemyObstacle);
                     break;
                 default:

@@ -21,6 +21,7 @@ public class EnemyStats : MonoBehaviour
     AudioSource sonidoEnemigo;
     bool estaMuerto = false;
     Slider saludEnemgios;
+    EnemyManager enemyManager;
 
     private void Awake()
     {
@@ -29,6 +30,7 @@ public class EnemyStats : MonoBehaviour
         anim = this.gameObject.GetComponent<Animator>();
         sonidoEnemigo = this.gameObject.GetComponent<AudioSource>();
         player = FindObjectOfType<TankController>();
+        enemyManager = GameObject.Find("GameManager").GetComponent<EnemyManager>();
        
     }
     void Start()
@@ -84,6 +86,10 @@ public class EnemyStats : MonoBehaviour
         }
         Destroy(this.gameObject,0.3f);
         
+        if(Random.Range(0,100)+1 <= 100 && this.gameObject.tag != "Enemy" && this.gameObject.tag != "AtaqueA")
+        {
+            GameObject ammo = Instantiate(enemyManager.ammoBox, this.transform.position, Quaternion.identity);
+        }
     }
 
     void OnTriggerEnter(Collider objeto)

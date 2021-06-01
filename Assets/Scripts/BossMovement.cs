@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossMovement : MonoBehaviour
 {
-    public float velocidad;
+    public static float velocidad = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,4 +16,7 @@ public class BossMovement : MonoBehaviour
     {
         this.transform.position += Vector3.left * velocidad * Time.deltaTime;
     }
+
+
+    
 }

@@ -11,6 +11,7 @@ public class BossEnemyController : MonoBehaviour
     public int vidaMaxima = 100;
     public int vidaActual;
     public int defensa;
+    public GameObject offsetBala;
     Slider saludTorreta;
     bool isDamaged = false;
     bool isDead = false;
@@ -33,7 +34,6 @@ public class BossEnemyController : MonoBehaviour
     }
     void Start()
     {
-       
     }
 
 
@@ -70,7 +70,7 @@ public class BossEnemyController : MonoBehaviour
             RecibirDaño(player.ataque);
             sonidos.PlayOneShot(dañoAEnemigo);
         }
-        if (other.gameObject.tag == "AtaqueT")
+        if (other.gameObject.tag == "AtaqueT" && BossMovement.velocidad > 0)
         {
             StartCoroutine(Disparo());
         }
@@ -103,6 +103,7 @@ public class BossEnemyController : MonoBehaviour
         isDead = true;
         sonidos.PlayOneShot(muerteEnemigo);
         Destroy(this.gameObject, 0.5f);
+        TankController.dinero += 5;
     }
 
 
@@ -112,7 +113,10 @@ public class BossEnemyController : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         GameObject bala = Instantiate(prefabDisparo) as GameObject;
-        bala.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x - 1.20f, this.gameObject.transform.position.y + 0.25f, 0);
+     
+        bala.gameObject.transform.position = offsetBala.transform.position;
+        
+        
         Vector3 dir = (player.transform.position - bala.gameObject.transform.position).normalized;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         bala.gameObject.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -120,5 +124,11 @@ public class BossEnemyController : MonoBehaviour
         {
             StartCoroutine(Disparo());
         }
+    }
+   
+
+    private void OnBecameInvisible()
+    {
+        this.StopAllCoroutines();
     }
 }

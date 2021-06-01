@@ -28,7 +28,10 @@ public class TankController : MonoBehaviour
     public static int dinero = 0;
     public bool estaMuerto;
     bool dañado;
-    public Color colorDaño = new Color(1f, 0f, 0f, 0.1f); 
+    public Color colorDaño = new Color(1f, 0f, 0f, 0.1f);
+    float anguloDeDisparo;
+    
+    
     
     
 
@@ -45,7 +48,8 @@ public class TankController : MonoBehaviour
         dinero = 0;
     }
     void Update()
-    {
+    { 
+       
         if (dañado && !estaMuerto)
         {
             indicadorDaño.color = colorDaño;
@@ -64,6 +68,7 @@ public class TankController : MonoBehaviour
         dineroT.text = dinero.ToString();
         municionT.text = municion.ToString();
         SeguirPuntero();
+        
 
     }
 
@@ -71,7 +76,7 @@ public class TankController : MonoBehaviour
     public void DisparoPersonaje()
     {
         if(municion > 0) { 
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1") && anguloDeDisparo <= 95 && anguloDeDisparo >= -20)
             {
                 Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 worldPosition = new Vector3(worldPosition.x, worldPosition.y, 0);
@@ -80,7 +85,7 @@ public class TankController : MonoBehaviour
                     {
                         GameObject boom = Instantiate(ExplosionDisparoPrefab, worldPosition, Quaternion.identity) as GameObject;
                         boom.tag = "PlayerAtaque";
-                        Destroy(boom, 0.9f);
+                        Destroy(boom, 0.8f);
                         municion--;
                     }
                 }
@@ -135,7 +140,14 @@ public class TankController : MonoBehaviour
         {
             EnemyManager.cantEnemigosDestruidos++;
         }
+        if (objeto.gameObject.tag == "Ammo")
+        {
+            Destroy(objeto.gameObject);
+            municion += 5;
+        }
     }
+   
+
     void SeguirPuntero()
     {
         Transform torreta = this.gameObject.transform.Find("Cannon1");
@@ -148,8 +160,8 @@ public class TankController : MonoBehaviour
         mousePos.y = mousePos.y - objectPos.y;
 
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
-        torreta.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-       
+        anguloDeDisparo = angle;
+        torreta.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Clamp(angle, -20f, 95f)));
     }
 
     public void GameReset()

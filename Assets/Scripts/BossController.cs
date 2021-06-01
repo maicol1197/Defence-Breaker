@@ -57,8 +57,6 @@ public class BossController : MonoBehaviour
                 foreach (GameObject go in partesDelJefe)
                 {
                     saludJefeMaxima += go.gameObject.GetComponent<BossEnemyController>().vidaMaxima;
-                    Debug.Log("Salud parte: " + go.gameObject.GetComponent<BossEnemyController>().vidaMaxima);
-                    Debug.Log("Salud total jefe: " + saludJefeMaxima);
                 }
                 saludJefeActual = saludJefeMaxima;
                 saludJefe.maxValue = saludJefeMaxima;
@@ -68,7 +66,6 @@ public class BossController : MonoBehaviour
         }
 
         saludJefe.value = saludJefeActual;
-        Debug.Log("Salud del jefe actual: " + saludJefeActual);
         if (saludJefeActual <= 0 && isBossAlive)
         {
             Muerte();
@@ -79,15 +76,15 @@ public class BossController : MonoBehaviour
     {
         isBossAlive = true;
         Locomotora = Instantiate(prefabLocomotora) as GameObject;
-        Locomotora.transform.position = new Vector3(71.06f,1.71f,0);
+        Locomotora.transform.position = new Vector3(71.06f, 1.4f, 0);
         VagonGris = Instantiate(prefabGris) as GameObject;
-        VagonGris.transform.position = new Vector3(55.52f,1f,0);
+        VagonGris.transform.position = new Vector3(55.52f, 0.75f, 0);
         VagonAzul = Instantiate(prefabAzul) as GameObject;
-        VagonAzul.transform.position = new Vector3(42.84f,1.02f,0);
+        VagonAzul.transform.position = new Vector3(42.84f, 0.77f, 0);
         VagonVerde = Instantiate(prefabVerde) as GameObject;
-        VagonVerde.transform.position = new Vector3(30.09f,1.02f,0);
+        VagonVerde.transform.position = new Vector3(30.09f,0.8f, 0);
         VagonRojo = Instantiate(prefabRojo) as GameObject;
-        VagonRojo.transform.position = new Vector3(16.72f, 1.02f, 0);
+        VagonRojo.transform.position = new Vector3(16.72f,0.78f, 0);
 
     }
 

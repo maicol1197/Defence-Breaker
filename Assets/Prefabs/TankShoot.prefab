@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4529432050465131719}
   - component: {fileID: 7618570075419100465}
   - component: {fileID: 3850575496156907089}
+  - component: {fileID: -6600443804399309544}
   m_Layer: 0
   m_Name: TankShoot
   m_TagString: PlayerAtaque
@@ -214,3 +215,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-6600443804399309544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4529432050465131720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e048541ab658e7f4988798d868a25166, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
